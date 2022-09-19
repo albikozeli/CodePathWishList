@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">CodePathWishList</string>
+    <string name="add_item">ADD ITEM</string>
+    <string name="store_url">Store URL</string>
+    <string name="item">Item</string>
+    <string name="price">Price</string>
 </resources>

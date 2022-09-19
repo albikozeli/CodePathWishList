@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    >
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
@@ -23,7 +24,7 @@
         android:layout_marginBottom="15dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:hint="Store"
+        android:hint="@string/store_url"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -34,7 +35,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginEnd="15dp"
         android:layout_marginBottom="15dp"
-        android:text="Button"
+        android:text="@string/add_item"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/store" />
@@ -47,7 +48,7 @@
         android:layout_marginBottom="15dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:hint="Item"
+        android:hint="@string/item"
         app:layout_constraintBottom_toTopOf="@+id/store"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -58,8 +59,10 @@
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="15dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Price"
+        android:inputType="numberDecimal"
+        android:hint="@string/price"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
