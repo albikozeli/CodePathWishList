@@ -1,16 +1,15 @@
 package com.example.codepathwishlist
 
-import android.content.Context
+import android.graphics.Paint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 
-class WishListAdapter(private val context: Context,private val wishlistitems:MutableList<WishList>): RecyclerView.Adapter<WishListAdapter.ViewHolder>() {
+class WishListAdapter(private val wishlistitems:MutableList<WishList>): RecyclerView.Adapter<WishListAdapter.ViewHolder>() {
 
-    class ViewHolder(private val context:Context, itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val itemTV:TextView
         val priceTV:TextView
         val storeTV:TextView
@@ -31,25 +30,23 @@ class WishListAdapter(private val context: Context,private val wishlistitems:Mut
         // Inflate the custom layout
         val contactView = inflater.inflate(R.layout.wishlist_item, parent, false)
         // Return a new holder instance
-        return ViewHolder(context,contactView)
+        return ViewHolder(contactView)
 
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val wishlistitem = wishlistitems.get(position)
+        val wishlistitem = wishlistitems[position]
 
         holder.itemTV.text = wishlistitem.item
         holder.priceTV.text = wishlistitem.price
         holder.storeTV.text = wishlistitem.store
+        holder.storeTV.setPaintFlags(Paint.UNDERLINE_TEXT_FLAG)
 
     }
 
     override fun getItemCount(): Int {
         return wishlistitems.size
     }
-
-    fun deleteItem(index: Int){
-        wishlistitems.removeAt(index)
-        notifyItemRemoved(index)
-    }
 }
+
+
